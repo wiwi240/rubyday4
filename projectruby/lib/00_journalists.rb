@@ -31,8 +31,8 @@ end
 
 def compter_majuscules(trieur)
   # On compte si le caractère à l'index 1 est égal à sa version MAJUSCULE
-  resultat = trieur.count { |x| x[1] == x[1].upcase }
-  
+  resultat = trieur.count { |x| x[1] =~ /[A-Z]/ }
+
   puts "Il y a #{resultat} handles qui commencent par une majuscule."
 end
 
@@ -41,7 +41,7 @@ def tri_alphabetique(trieur)
   puts "handle dans l'ordre alphabétique : #{resultat}"
 end
 
-def trouver_position(trieur)
+def trouver_position(trieur)    #
   position = trieur.index("@epenser")
   if position
     puts "@epenser est à la position : #{position}"
@@ -74,7 +74,7 @@ def effectuer_toutes_les_taches(trieur)
 end
 
 # Exécution final
-effectuer_toutes_les_taches(handle)
+(handle)
 
 #count(handle) compte tout les handle 
 #filtrer(handle) affiche le/les plus petit handle
@@ -83,3 +83,4 @@ effectuer_toutes_les_taches(handle)
 #tri_alphabetique(handle) trie alphabétiquement
 #trouver_position(handle) trouve un handle dans la liste
 #repartition_exhaustive(handle)
+effectuer_toutes_les_taches(handle)
